@@ -1,14 +1,13 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "SignCraft",
+  "name": "SignCraft",
+  "description": "A mod with a variety of signs.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "url": "https://github.com/moltenSource/SignCraft",
+  "authorList": ["Silverdark", "mauam"],
+  "credits": "Thanks to OpenComputers",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

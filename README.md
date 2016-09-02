@@ -10,3 +10,6 @@ For eclipse:
 For IntelliJ IDEA:
 2. Open IntelliJ IDEA and import the project (the build.gradle file)
 3. After the project is imported run `gradlew genIntellijRuns`
+
+## Credits
+* [Origin of Signs](https://de.wikipedgit ia.org/wiki/Warnzeichen)

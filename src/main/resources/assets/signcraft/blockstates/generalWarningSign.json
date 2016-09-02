@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:generalWarningSign" },
+    "facing=east": { "model": "SignCraft:generalWarningSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:generalWarningSign" },
+    "facing=west": { "model": "SignCraft:generalWarningSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:generalWarningSign", "y": 180 }
+  }
+}

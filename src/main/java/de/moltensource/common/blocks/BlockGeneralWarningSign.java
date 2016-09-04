@@ -100,11 +100,6 @@ public class BlockGeneralWarningSign extends Block {
         super.addCollisionBoxToList(state, worldIn, pos, box, collidingBoxes, entityIn);
     }
 
-//    @Override
-//    public IBlockState getStateForEntityRender(IBlockState state) {
-//        return getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
-//    }
-
     @Override
     public IBlockState getStateFromMeta(int meta) {
         EnumFacing facing = EnumFacing.getFront(meta);

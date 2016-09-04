@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:explosiveSubstancesSign" },
+    "facing=east": { "model": "SignCraft:explosiveSubstancesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:explosiveSubstancesSign" },
+    "facing=west": { "model": "SignCraft:explosiveSubstancesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:explosiveSubstancesSign", "y": 180 }
+  }
+}

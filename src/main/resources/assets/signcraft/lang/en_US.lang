@@ -1,2 +1,3 @@
 itemGroup.SignCraft=SignCraft
 tile.SignCraft.generalWarningSign.name=General Warning Sign
+tile.SignCraft.explosiveSubstancesSign.name=Explosive Substances

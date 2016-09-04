@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "SignCraft:blocks/generalWarningSign",
-    "0": "SignCraft:blocks/generalWarningSign"
+    "particle": "SignCraft:blocks/counterRotatingRollerSign",
+    "0": "SignCraft:blocks/counterRotatingRollerSign"
   },
   "display": {
     "gui": {

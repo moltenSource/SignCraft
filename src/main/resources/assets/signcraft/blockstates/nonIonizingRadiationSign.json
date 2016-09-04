@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:nonIonizingRadiationSign" },
+    "facing=east": { "model": "SignCraft:nonIonizingRadiationSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:nonIonizingRadiationSign" },
+    "facing=west": { "model": "SignCraft:nonIonizingRadiationSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:nonIonizingRadiationSign", "y": 180 }
+  }
+}

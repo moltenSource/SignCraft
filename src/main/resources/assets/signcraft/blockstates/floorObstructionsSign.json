@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:floorObstructionsSign" },
+    "facing=east": { "model": "SignCraft:floorObstructionsSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:floorObstructionsSign" },
+    "facing=west": { "model": "SignCraft:floorObstructionsSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:floorObstructionsSign", "y": 180 }
+  }
+}

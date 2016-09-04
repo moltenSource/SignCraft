@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "SignCraft:blocks/generalWarningSign",
-    "0": "SignCraft:blocks/generalWarningSign"
+    "particle": "SignCraft:blocks/overheadObstaclesSign",
+    "0": "SignCraft:blocks/overheadObstaclesSign"
   },
   "display": {
     "gui": {

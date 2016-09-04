@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "SignCraft:blocks/generalWarningSign",
-    "0": "SignCraft:blocks/generalWarningSign"
+    "particle": "SignCraft:blocks/riskOfCrushingSign",
+    "0": "SignCraft:blocks/riskOfCrushingSign"
   },
   "display": {
     "gui": {

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:bioHazardSign" },
+    "facing=east": { "model": "SignCraft:bioHazardSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:bioHazardSign" },
+    "facing=west": { "model": "SignCraft:bioHazardSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:bioHazardSign", "y": 180 }
+  }
+}

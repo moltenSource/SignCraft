@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:oxidisingMaterialsSign" },
+    "facing=east": { "model": "SignCraft:oxidisingMaterialsSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:oxidisingMaterialsSign" },
+    "facing=west": { "model": "SignCraft:oxidisingMaterialsSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:oxidisingMaterialsSign", "y": 180 }
+  }
+}

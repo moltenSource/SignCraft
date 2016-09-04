@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:remotelyStartedEquipmentSign" },
+    "facing=east": { "model": "SignCraft:remotelyStartedEquipmentSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:remotelyStartedEquipmentSign" },
+    "facing=west": { "model": "SignCraft:remotelyStartedEquipmentSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:remotelyStartedEquipmentSign", "y": 180 }
+  }
+}

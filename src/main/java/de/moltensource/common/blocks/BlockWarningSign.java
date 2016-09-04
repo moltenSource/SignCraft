@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlockGeneralWarningSign extends Block {
+public class BlockWarningSign extends Block {
 
     public static final AxisAlignedBB BLOCK_BOX_NORTH = new AxisAlignedBB(0, 0, 0, 1, 1, 0.0625);
     public static final AxisAlignedBB BLOCK_BOX_SOUTH = new AxisAlignedBB(1, 0, 1, 0, 1, 15 * 0.0625);
@@ -26,7 +26,7 @@ public class BlockGeneralWarningSign extends Block {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-    public BlockGeneralWarningSign() {
+    public BlockWarningSign() {
         super(Material.CIRCUITS);
         setHardness(0.5F);
     }

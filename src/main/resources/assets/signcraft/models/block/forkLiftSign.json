@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "SignCraft:blocks/generalWarningSign",
-    "0": "SignCraft:blocks/generalWarningSign"
+    "particle": "SignCraft:blocks/forkLiftSign",
+    "0": "SignCraft:blocks/forkLiftSign"
   },
   "display": {
     "gui": {

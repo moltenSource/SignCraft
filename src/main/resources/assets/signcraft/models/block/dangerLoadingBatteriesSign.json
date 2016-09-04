@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "SignCraft:blocks/generalWarningSign",
-    "0": "SignCraft:blocks/generalWarningSign"
+    "particle": "SignCraft:blocks/dangerLoadingBatteriesSign",
+    "0": "SignCraft:blocks/dangerLoadingBatteriesSign"
   },
   "display": {
     "gui": {

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:overheadCraneSign" },
+    "facing=east": { "model": "SignCraft:overheadCraneSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:overheadCraneSign" },
+    "facing=west": { "model": "SignCraft:overheadCraneSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:overheadCraneSign", "y": 180 }
+  }
+}

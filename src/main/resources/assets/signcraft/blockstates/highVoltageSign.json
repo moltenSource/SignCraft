@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:highVoltageSign" },
+    "facing=east": { "model": "SignCraft:highVoltageSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:highVoltageSign" },
+    "facing=west": { "model": "SignCraft:highVoltageSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:highVoltageSign", "y": 180 }
+  }
+}

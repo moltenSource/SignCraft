@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:lowTemperaturesSign" },
+    "facing=east": { "model": "SignCraft:lowTemperaturesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:lowTemperaturesSign" },
+    "facing=west": { "model": "SignCraft:lowTemperaturesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:lowTemperaturesSign", "y": 180 }
+  }
+}

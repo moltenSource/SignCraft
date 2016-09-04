@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:hotSurfacesSign" },
+    "facing=east": { "model": "SignCraft:hotSurfacesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:hotSurfacesSign" },
+    "facing=west": { "model": "SignCraft:hotSurfacesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:hotSurfacesSign", "y": 180 }
+  }
+}

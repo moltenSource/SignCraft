@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:handInjuryHazardSign" },
+    "facing=east": { "model": "SignCraft:handInjuryHazardSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:handInjuryHazardSign" },
+    "facing=west": { "model": "SignCraft:handInjuryHazardSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:handInjuryHazardSign", "y": 180 }
+  }
+}

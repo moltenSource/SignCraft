@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:corrosiveSubstancesSign" },
+    "facing=east": { "model": "SignCraft:corrosiveSubstancesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:corrosiveSubstancesSign" },
+    "facing=west": { "model": "SignCraft:corrosiveSubstancesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:corrosiveSubstancesSign", "y": 180 }
+  }
+}

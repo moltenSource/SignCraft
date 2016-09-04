@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:guardDogSign" },
+    "facing=east": { "model": "SignCraft:guardDogSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:guardDogSign" },
+    "facing=west": { "model": "SignCraft:guardDogSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:guardDogSign", "y": 180 }
+  }
+}

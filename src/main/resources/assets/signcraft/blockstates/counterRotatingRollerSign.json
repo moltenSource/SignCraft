@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:counterRotatingRollerSign" },
+    "facing=east": { "model": "SignCraft:counterRotatingRollerSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:counterRotatingRollerSign" },
+    "facing=west": { "model": "SignCraft:counterRotatingRollerSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:counterRotatingRollerSign", "y": 180 }
+  }
+}

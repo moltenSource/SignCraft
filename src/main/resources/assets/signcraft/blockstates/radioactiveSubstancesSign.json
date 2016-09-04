@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:radioactiveSubstancesSign" },
+    "facing=east": { "model": "SignCraft:radioactiveSubstancesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:radioactiveSubstancesSign" },
+    "facing=west": { "model": "SignCraft:radioactiveSubstancesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:radioactiveSubstancesSign", "y": 180 }
+  }
+}

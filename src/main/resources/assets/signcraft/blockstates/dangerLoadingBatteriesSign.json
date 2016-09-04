@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:dangerLoadingBatteriesSign" },
+    "facing=east": { "model": "SignCraft:dangerLoadingBatteriesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:dangerLoadingBatteriesSign" },
+    "facing=west": { "model": "SignCraft:dangerLoadingBatteriesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:dangerLoadingBatteriesSign", "y": 180 }
+  }
+}

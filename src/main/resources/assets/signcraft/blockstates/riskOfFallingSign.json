@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:riskOfFallingSign" },
+    "facing=east": { "model": "SignCraft:riskOfFallingSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:riskOfFallingSign" },
+    "facing=west": { "model": "SignCraft:riskOfFallingSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:riskOfFallingSign", "y": 180 }
+  }
+}

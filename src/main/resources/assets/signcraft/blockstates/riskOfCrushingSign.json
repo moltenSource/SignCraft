@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:riskOfCrushingSign" },
+    "facing=east": { "model": "SignCraft:riskOfCrushingSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:riskOfCrushingSign" },
+    "facing=west": { "model": "SignCraft:riskOfCrushingSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:riskOfCrushingSign", "y": 180 }
+  }
+}

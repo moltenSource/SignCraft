@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:forkLiftSign" },
+    "facing=east": { "model": "SignCraft:forkLiftSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:forkLiftSign" },
+    "facing=west": { "model": "SignCraft:forkLiftSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:forkLiftSign", "y": 180 }
+  }
+}

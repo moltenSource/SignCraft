@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:magneticFieldSign" },
+    "facing=east": { "model": "SignCraft:magneticFieldSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:magneticFieldSign" },
+    "facing=west": { "model": "SignCraft:magneticFieldSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:magneticFieldSign", "y": 180 }
+  }
+}

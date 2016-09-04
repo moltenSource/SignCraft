@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:poisonousSubstancesSign" },
+    "facing=east": { "model": "SignCraft:poisonousSubstancesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:poisonousSubstancesSign" },
+    "facing=west": { "model": "SignCraft:poisonousSubstancesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:poisonousSubstancesSign", "y": 180 }
+  }
+}

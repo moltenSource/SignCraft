@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:slippingHazardSign" },
+    "facing=east": { "model": "SignCraft:slippingHazardSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:slippingHazardSign" },
+    "facing=west": { "model": "SignCraft:slippingHazardSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:slippingHazardSign", "y": 180 }
+  }
+}

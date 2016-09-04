@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:gasBottlesSign" },
+    "facing=east": { "model": "SignCraft:gasBottlesSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:gasBottlesSign" },
+    "facing=west": { "model": "SignCraft:gasBottlesSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:gasBottlesSign", "y": 180 }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:sharpObjectsSign" },
+    "facing=east": { "model": "SignCraft:sharpObjectsSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:sharpObjectsSign" },
+    "facing=west": { "model": "SignCraft:sharpObjectsSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:sharpObjectsSign", "y": 180 }
+  }
+}

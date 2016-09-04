@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:laserBeamSign" },
+    "facing=east": { "model": "SignCraft:laserBeamSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:laserBeamSign" },
+    "facing=west": { "model": "SignCraft:laserBeamSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:laserBeamSign", "y": 180 }
+  }
+}

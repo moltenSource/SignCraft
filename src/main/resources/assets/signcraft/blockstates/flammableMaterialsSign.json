@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=up": { "model": "SignCraft:flammableMaterialsSign" },
+    "facing=east": { "model": "SignCraft:flammableMaterialsSign", "y": 270 },
+    "facing=south": { "model": "SignCraft:flammableMaterialsSign" },
+    "facing=west": { "model": "SignCraft:flammableMaterialsSign", "y": 90 },
+    "facing=north": { "model": "SignCraft:flammableMaterialsSign", "y": 180 }
+  }
+}

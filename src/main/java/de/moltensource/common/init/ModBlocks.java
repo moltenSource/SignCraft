@@ -1,6 +1,7 @@
 package de.moltensource.common.init;
 
 import de.moltensource.common.ProxyCommon;
+import de.moltensource.common.blocks.BlockSignPress;
 import de.moltensource.common.blocks.BlockWarningSign;
 import net.minecraft.block.Block;
 

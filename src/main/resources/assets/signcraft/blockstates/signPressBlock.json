@@ -1,9 +1,5 @@
 {
   "variants": {
-    "facing=up": { "model": "SignCraft:signPressBlock" },
-    "facing=east": { "model": "SignCraft:signPressBlock", "y": 270 },
-    "facing=south": { "model": "SignCraft:signPressBlock" },
-    "facing=west": { "model": "SignCraft:signPressBlock", "y": 90 },
-    "facing=north": { "model": "SignCraft:signPressBlock", "y": 180 }
+    "normal": { "model": "SignCraft:signPressBlock" }
   }
 }

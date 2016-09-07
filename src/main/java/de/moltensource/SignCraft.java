@@ -2,6 +2,7 @@ package de.moltensource;
 
 import de.moltensource.common.ProxyCommon;
 import de.moltensource.common.blocks.BlockWarningSign;
+import de.moltensource.common.init.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -25,7 +26,7 @@ public class SignCraft {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
-        GameRegistry.addRecipe(new ItemStack(Blocks.COAL_BLOCK, 1),
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.signPressBlock, 1),
                 "SPS",
                 "S S",
                 "SSS",

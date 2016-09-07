@@ -35,6 +35,7 @@ public class ModBlocks {
     public static Block riskOfFallingSign;
     public static Block sharpObjectsSign;
     public static Block slippingHazardSign;
+    public static Block signPressBlock;
 
     public static void registerBlocks(ProxyCommon proxy) {
         generalWarningSign = proxy.registerBlock("generalWarningSign", BlockWarningSign::new);
@@ -66,5 +67,6 @@ public class ModBlocks {
         riskOfFallingSign = proxy.registerBlock("riskOfFallingSign", BlockWarningSign::new);
         sharpObjectsSign = proxy.registerBlock("sharpObjectsSign", BlockWarningSign::new);
         slippingHazardSign = proxy.registerBlock("slippingHazardSign", BlockWarningSign::new);
+        signPressBlock = proxy.registerBlock("signPressBlock", BlockSignPress::new);
     }
 }

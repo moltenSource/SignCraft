@@ -28,3 +28,4 @@ tile.SignCraft.riskOfCrushingSign.name=Warnung vor Quetschgefahr
 tile.SignCraft.riskOfFallingSign.name=Warnung vor Absturzgefahr
 tile.SignCraft.sharpObjectsSign.name=Warnung vor spitzem Gegenstand
 tile.SignCraft.slippingHazardSign.name=Warnung vor Rutschgefahr
+tile.SignCraft.signPressBlock.name=Schilderpresse

@@ -1,0 +1,53 @@
+{
+  "textures": {
+    "particle": "SignCraft:blocks/signPressBlock",
+    "0": "SignCraft:blocks/signPressBlock"
+  },
+  "display": {
+    "gui": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0, 0, 0],
+      "scale":[ 0.8, 0.8, 0.8 ]
+    },
+    "ground": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0, 3, 0],
+      "scale":[ 0.25, 0.25, 0.25 ]
+    },
+    "fixed": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0, 0, 0],
+      "scale":[ 0.5, 0.5, 0.5 ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [ 0, -45, 0 ],
+      "translation": [ -2, 2.6, 3],
+      "scale": [ 0.375, 0.375, 0.375 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -45, 0 ],
+      "translation": [ 0, 1, 0 ],
+      "scale": [ 0.40, 0.40, 0.40 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, -45, 0 ],
+      "translation": [ 0, 1, 0 ],
+      "scale": [ 0.40, 0.40, 0.40 ]
+    }
+  },
+  "elements": [
+    {
+      "name": "Cube",
+      "from": [ 0.0, 0.0, 0.0 ],
+      "to": [ 16.0, 16.0, 0.0 ],
+      "faces": {
+        "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+        "east": { "texture": "#-1", "uv": [ 0.0, 0.0, 0.0, 16.0 ] },
+        "south": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+        "west": { "texture": "#-1", "uv": [ 0.0, 0.0, -14.0, 8.0 ] },
+        "up": { "texture": "#-1", "uv": [ 0.0, 0.0, 15.0, 0.0 ] },
+        "down": { "texture": "#-1", "uv": [ 0.0, 0.0, 16.0, 0.0 ] }
+      }
+    }
+  ]
+}

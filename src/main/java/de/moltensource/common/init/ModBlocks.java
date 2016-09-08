@@ -3,7 +3,9 @@ package de.moltensource.common.init;
 import de.moltensource.common.ProxyCommon;
 import de.moltensource.common.blocks.BlockSignPress;
 import de.moltensource.common.blocks.BlockWarningSign;
+import de.moltensource.tile.TileEntitySignPress;
 import net.minecraft.block.Block;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 
@@ -69,5 +71,9 @@ public class ModBlocks {
         sharpObjectsSign = proxy.registerBlock("sharpObjectsSign", BlockWarningSign::new);
         slippingHazardSign = proxy.registerBlock("slippingHazardSign", BlockWarningSign::new);
         signPressBlock = proxy.registerBlock("signPressBlock", BlockSignPress::new);
+    }
+
+    public static void registerTileEntities() {
+        GameRegistry.registerTileEntity(TileEntitySignPress.class, "BlockSignPress");
     }
 }

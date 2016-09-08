@@ -1,13 +1,14 @@
 package de.moltensource;
 
+import de.moltensource.client.GuiHandler;
 import de.moltensource.common.ProxyCommon;
-import de.moltensource.common.blocks.BlockWarningSign;
 import de.moltensource.common.init.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -22,6 +23,11 @@ public class SignCraft {
 
     @SidedProxy(clientSide = "de.moltensource.client.ProxyClient", serverSide = "de.moltensource.server.ProxyServer")
     public static ProxyCommon proxy;
+
+    @EventHandler
+    public static void init(FMLInitializationEvent event) {
+        new GuiHandler();
+    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {

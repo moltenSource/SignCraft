@@ -14,4 +14,4 @@ For IntelliJ IDEA:
 3. After the project is imported run `gradlew genIntellijRuns`
 
 ## Credits
-* [Origin of Signs](https://de.wikipedgit ia.org/wiki/Warnzeichen)
+* [Origin of Signs](https://de.wikipedia.org/wiki/Warnzeichen)

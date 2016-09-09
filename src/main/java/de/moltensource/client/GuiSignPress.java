@@ -5,25 +5,42 @@ import de.moltensource.client.container.ContainerSignCraft;
 import de.moltensource.tile.TileEntitySignPress;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.awt.*;
+
+@SideOnly(Side.CLIENT)
 public class GuiSignPress extends GuiContainer {
     public static final ResourceLocation texture = new ResourceLocation(SignCraft.MODID.toLowerCase(), "textures/gui/blockSignPress.png");
+    private TileEntitySignPress entity;
 
     public GuiSignPress(InventoryPlayer invPlayer, TileEntitySignPress entity) {
         super(new ContainerSignCraft(invPlayer, entity));
 
         xSize = 176;
         ySize = 165;
+
+        this.entity = entity;
     }
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-        GL11.glColor4f(1f, 1f, 1f, 1f);
-        // TODO check if "Minecraft.getMinecraft().func_110434_K().func_110577_a(texture);" equals:
         Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+    }
+
+    @Override
+    protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+        super.drawGuiContainerForegroundLayer(mouseX, mouseY);
+
+        final int LABEL_XPOS = 5;
+        final int LABEL_YPOS = 5;
+
+        fontRendererObj.drawString(entity.getDisplayName().getUnformattedText(), LABEL_XPOS, LABEL_YPOS, Color.darkGray.getRGB());
     }
 }

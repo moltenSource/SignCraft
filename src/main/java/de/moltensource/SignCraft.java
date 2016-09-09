@@ -26,6 +26,7 @@ public class SignCraft {
 
     @EventHandler
     public static void init(FMLInitializationEvent event) {
+        proxy.init(event);
         new GuiHandler();
     }
 

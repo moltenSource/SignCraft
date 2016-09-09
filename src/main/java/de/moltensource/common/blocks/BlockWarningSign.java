@@ -74,7 +74,7 @@ public class BlockWarningSign extends Block {
         EnumFacing facing = state.getValue(FACING);
 
         AxisAlignedBB box;
-        
+
         switch (facing.getName()) {
             case "south":
                 box = BLOCK_BOX_NORTH;

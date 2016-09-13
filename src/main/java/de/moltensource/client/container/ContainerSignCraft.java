@@ -14,18 +14,19 @@ public class ContainerSignCraft extends Container {
     private static final int CRAFTING_SLOTS_ROW_COUNT = 3;
     private static final int CRAFTING_SLOTS_COLUMN_COUNT = 3;
     public static final int CRAFTING_SLOTS_COUNT = CRAFTING_SLOTS_ROW_COUNT * CRAFTING_SLOTS_COLUMN_COUNT;
-    public static final int SIGNPRESS_SLOTS_COUNT = CRAFTING_SLOTS_COUNT + OUTPUT_SLOTS_COUNT;
+
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
+    public static final int SIGNPRESS_SLOTS_COUNT = CRAFTING_SLOTS_COUNT + OUTPUT_SLOTS_COUNT + VANILLA_SLOT_COUNT;
 
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int FIRST_CRAFTING_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int FIRST_OUTPUT_SLOT_INDEX = FIRST_CRAFTING_SLOT_INDEX + CRAFTING_SLOTS_COUNT;
 
-    private static final int FIRST_CRAFTING_SLOT_NUMBER = 0;
+    private static final int FIRST_CRAFTING_SLOT_NUMBER = VANILLA_SLOT_COUNT;
     private static final int FIRST_OUTPUT_SLOT_NUMBER = FIRST_CRAFTING_SLOT_NUMBER + CRAFTING_SLOTS_COUNT;
 
     private TileEntitySignPress entity;
@@ -74,9 +75,9 @@ public class ContainerSignCraft extends Container {
         final int OUTPUT_SLOTS_YPOS = 35;
 
         // add output slots
-        for (int y = 0; y < OUTPUT_SLOTS_COUNT; y++) {
-            int slotNumber = y + FIRST_OUTPUT_SLOT_NUMBER;
-            addSlotToContainer(new SlotOutput(entity, slotNumber, OUTPUT_SLOTS_XPOS, OUTPUT_SLOTS_YPOS + SLOT_Y_SPACING * y));
+        for (int x = 0; x < OUTPUT_SLOTS_COUNT; x++) {
+            int slotNumber = x + FIRST_OUTPUT_SLOT_NUMBER;
+            addSlotToContainer(new SlotOutput(entity, slotNumber, OUTPUT_SLOTS_XPOS, OUTPUT_SLOTS_YPOS + SLOT_Y_SPACING * x));
         }
     }
 

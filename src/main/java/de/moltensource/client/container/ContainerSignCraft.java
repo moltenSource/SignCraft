@@ -10,8 +10,10 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class ContainerSignCraft extends Container {
-    public static final int CRAFTING_SLOTS_COUNT = 9;
     public static final int OUTPUT_SLOTS_COUNT = 1;
+    private static final int CRAFTING_SLOTS_ROW_COUNT = 3;
+    private static final int CRAFTING_SLOTS_COLUMN_COUNT = 3;
+    public static final int CRAFTING_SLOTS_COUNT = CRAFTING_SLOTS_ROW_COUNT * CRAFTING_SLOTS_COLUMN_COUNT;
     public static final int SIGNPRESS_SLOTS_COUNT = CRAFTING_SLOTS_COUNT + OUTPUT_SLOTS_COUNT;
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -35,7 +37,7 @@ public class ContainerSignCraft extends Container {
         final int SLOT_X_SPACING = 18;
         final int SLOT_Y_SPACING = 18;
         final int HOTBAR_XPOS = 8;
-        final int HOTBAR_YPOS = 183;
+        final int HOTBAR_YPOS = 142;
 
         // add player hotbar to gui
         for (int x = 0; x < HOTBAR_SLOT_COUNT; x++) {
@@ -43,7 +45,7 @@ public class ContainerSignCraft extends Container {
         }
 
         final int PLAYER_INVENTORY_XPOS = 8;
-        final int PLAYER_INVENTORY_YPOS = 125;
+        final int PLAYER_INVENTORY_YPOS = 84;
 
         // add players inventory to gui
         for (int y = 0; y < PLAYER_INVENTORY_ROW_COUNT; y++) {
@@ -55,17 +57,21 @@ public class ContainerSignCraft extends Container {
             }
         }
 
-        final int CRAFTING_SLOTS_XPOS = 53;
-        final int CRAFTING_SLOTS_YPOS = 96;
+        final int CRAFTING_SLOTS_XPOS = 30;
+        final int CRAFTING_SLOTS_YPOS = 17;
 
         // add crafting slots
-        for (int x = 0; x < CRAFTING_SLOTS_COUNT; x++) {
-            int slotNumber = x + FIRST_CRAFTING_SLOT_NUMBER;
-            addSlotToContainer(new SlotCrafting(entity, slotNumber, CRAFTING_SLOTS_XPOS + SLOT_X_SPACING * x, CRAFTING_SLOTS_YPOS));
+        for (int y = 0; y < CRAFTING_SLOTS_ROW_COUNT; y++) {
+            for (int x = 0; x < CRAFTING_SLOTS_COLUMN_COUNT; x++) {
+                int slotNumber = x + FIRST_CRAFTING_SLOT_NUMBER;
+                int xpos = CRAFTING_SLOTS_XPOS + x * SLOT_X_SPACING;
+                int ypos = CRAFTING_SLOTS_YPOS + y * SLOT_Y_SPACING;
+                addSlotToContainer(new Slot(invPlayer, slotNumber, xpos, ypos));
+            }
         }
 
-        final int OUTPUT_SLOTS_XPOS = 134;
-        final int OUTPUT_SLOTS_YPOS = 24;
+        final int OUTPUT_SLOTS_XPOS = 124;
+        final int OUTPUT_SLOTS_YPOS = 35;
 
         // add output slots
         for (int y = 0; y < OUTPUT_SLOTS_COUNT; y++) {

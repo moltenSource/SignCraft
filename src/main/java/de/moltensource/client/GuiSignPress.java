@@ -22,7 +22,7 @@ public class GuiSignPress extends GuiContainer {
         super(new ContainerSignCraft(invPlayer, entity));
 
         xSize = 176;
-        ySize = 165;
+        ySize = 166;
 
         this.entity = entity;
     }

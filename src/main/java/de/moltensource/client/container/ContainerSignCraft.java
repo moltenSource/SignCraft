@@ -41,19 +41,19 @@ public class ContainerSignCraft extends Container {
         final int HOTBAR_YPOS = 142;
 
         // add player hotbar to gui
-        for (int x = 0; x < HOTBAR_SLOT_COUNT; x++) {
-            addSlotToContainer(new Slot(invPlayer, x, HOTBAR_XPOS + SLOT_X_SPACING * x, HOTBAR_YPOS));
+        for (int i = 0; i < HOTBAR_SLOT_COUNT; i++) {
+            addSlotToContainer(new Slot(invPlayer, i, HOTBAR_XPOS + SLOT_X_SPACING * i, HOTBAR_YPOS));
         }
 
         final int PLAYER_INVENTORY_XPOS = 8;
         final int PLAYER_INVENTORY_YPOS = 84;
 
         // add players inventory to gui
-        for (int y = 0; y < PLAYER_INVENTORY_ROW_COUNT; y++) {
-            for (int x = 0; x < PLAYER_INVENTORY_COLUMN_COUNT; x++) {
-                int slotNumber = HOTBAR_SLOT_COUNT + y * PLAYER_INVENTORY_COLUMN_COUNT + x;
-                int xpos = PLAYER_INVENTORY_XPOS + x * SLOT_X_SPACING;
-                int ypos = PLAYER_INVENTORY_YPOS + y * SLOT_Y_SPACING;
+        for (int i = 0; i < PLAYER_INVENTORY_ROW_COUNT; i++) {
+            for (int j = 0; j < PLAYER_INVENTORY_COLUMN_COUNT; j++) {
+                int slotNumber = HOTBAR_SLOT_COUNT + i * PLAYER_INVENTORY_COLUMN_COUNT + j;
+                int xpos = PLAYER_INVENTORY_XPOS + j * SLOT_X_SPACING;
+                int ypos = PLAYER_INVENTORY_YPOS + i * SLOT_Y_SPACING;
                 addSlotToContainer(new Slot(invPlayer, slotNumber, xpos, ypos));
             }
         }
@@ -62,11 +62,12 @@ public class ContainerSignCraft extends Container {
         final int CRAFTING_SLOTS_YPOS = 17;
 
         // add crafting slots
-        for (int y = 0; y < CRAFTING_SLOTS_ROW_COUNT; y++) {
-            for (int x = 0; x < CRAFTING_SLOTS_COLUMN_COUNT; x++) {
-                int slotNumber = x + FIRST_CRAFTING_SLOT_NUMBER;
-                int xpos = CRAFTING_SLOTS_XPOS + x * SLOT_X_SPACING;
-                int ypos = CRAFTING_SLOTS_YPOS + y * SLOT_Y_SPACING;
+        for (int i = 0; i < CRAFTING_SLOTS_ROW_COUNT; i++) {
+            for (int j = 0; j < CRAFTING_SLOTS_COLUMN_COUNT; j++) {
+                //int slotNumber = j + FIRST_CRAFTING_SLOT_NUMBER;
+                int slotNumber = VANILLA_SLOT_COUNT + i * CRAFTING_SLOTS_COLUMN_COUNT + j;
+                int xpos = CRAFTING_SLOTS_XPOS + j * SLOT_X_SPACING;
+                int ypos = CRAFTING_SLOTS_YPOS + i * SLOT_Y_SPACING;
                 addSlotToContainer(new Slot(invPlayer, slotNumber, xpos, ypos));
             }
         }
@@ -75,9 +76,9 @@ public class ContainerSignCraft extends Container {
         final int OUTPUT_SLOTS_YPOS = 35;
 
         // add output slots
-        for (int x = 0; x < OUTPUT_SLOTS_COUNT; x++) {
-            int slotNumber = x + FIRST_OUTPUT_SLOT_NUMBER;
-            addSlotToContainer(new SlotOutput(entity, slotNumber, OUTPUT_SLOTS_XPOS, OUTPUT_SLOTS_YPOS + SLOT_Y_SPACING * x));
+        for (int i = 0; i < OUTPUT_SLOTS_COUNT; i++) {
+            int slotNumber = i + FIRST_OUTPUT_SLOT_NUMBER;
+            addSlotToContainer(new SlotOutput(entity, slotNumber, OUTPUT_SLOTS_XPOS, OUTPUT_SLOTS_YPOS + SLOT_Y_SPACING * i));
         }
     }
 
@@ -90,37 +91,39 @@ public class ContainerSignCraft extends Container {
     @Override
     public ItemStack transferStackInSlot(EntityPlayer player, int sourceSlotIndex) {
         Slot sourceSlot = (Slot) inventorySlots.get(sourceSlotIndex);
-        if (sourceSlot == null || !sourceSlot.getHasStack()) return null;
 
-        ItemStack sourceStack = sourceSlot.getStack();
-        ItemStack copyOfSourceStack = sourceStack.copy();
+        ItemStack copyOfSourceStack = null;
+        if (sourceSlot != null && sourceSlot.getHasStack()) {
 
-        // check if the slot clicked is a vanilla container slots
-        if (sourceSlotIndex >= VANILLA_FIRST_SLOT_INDEX && sourceSlotIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            // merge clicked stack into the furnace slots
-            if (!mergeItemStack(sourceStack, FIRST_CRAFTING_SLOT_INDEX, FIRST_CRAFTING_SLOT_INDEX + CRAFTING_SLOTS_COUNT, false)) {
-                return null;
+            ItemStack sourceStack = sourceSlot.getStack();
+            copyOfSourceStack = sourceStack.copy();
+
+            // check if the slot clicked is a vanilla container slots
+            if (sourceSlotIndex >= VANILLA_FIRST_SLOT_INDEX && sourceSlotIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
+                // merge clicked stack into the furnace slots
+                if (!mergeItemStack(sourceStack, FIRST_CRAFTING_SLOT_INDEX, FIRST_CRAFTING_SLOT_INDEX + CRAFTING_SLOTS_COUNT, false)) {
+                    return null;
+                }
+            } else if (sourceSlotIndex == FIRST_OUTPUT_SLOT_INDEX) {
+                // output slot was clicked
+                if (!mergeItemStack(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
+                    return null;
+                }
+                sourceSlot.onSlotChange(sourceStack, copyOfSourceStack);
             } else {
+                System.err.print("Invalid slotIndex:" + sourceSlotIndex);
                 return null;
             }
-        } else if (sourceSlotIndex == FIRST_OUTPUT_SLOT_INDEX) {
-            // output slot was clicked
-            if (!mergeItemStack(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
-                return null;
+
+            // if stack size == 0 set slot content to null
+            if (sourceStack.stackSize == 0) {
+                sourceSlot.putStack((ItemStack) null);
+            } else {
+                sourceSlot.onSlotChanged();
             }
-        } else {
-            System.err.print("Invalid slotIndex:" + sourceSlotIndex);
-            return null;
-        }
 
-        // if stack size == 0 set slot content to null
-        if (sourceStack.stackSize == 0) {
-            sourceSlot.putStack(null);
-        } else {
-            sourceSlot.onSlotChanged();
+            sourceSlot.onPickupFromSlot(player, sourceStack);
         }
-
-        sourceSlot.onPickupFromSlot(player, sourceStack);
         return copyOfSourceStack;
     }
 

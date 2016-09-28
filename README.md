@@ -15,3 +15,6 @@ For IntelliJ IDEA:
 
 ## Credits
 * [Origin of Signs](https://de.wikipedia.org/wiki/Warnzeichen)
+
+## Licence
+[![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](http://opensource.org/licenses/MIT)

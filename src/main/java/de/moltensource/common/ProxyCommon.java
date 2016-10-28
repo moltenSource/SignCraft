@@ -2,6 +2,7 @@ package de.moltensource.common;
 
 import de.moltensource.SignCraft;
 import de.moltensource.common.init.ModBlocks;
+import de.moltensource.tile.TileEntitySignPress;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
@@ -33,7 +34,7 @@ public class ProxyCommon {
         return block;
     }
 
-    public void registerTileEntity(Class<TileEntity> c, String name) {
+    public void registerTileEntity(Class c, String name) {
         GameRegistry.registerTileEntity(c, name);
     }
 

@@ -37,12 +37,17 @@ public class ContainerSignCraft extends Container {
 
         final int SLOT_X_SPACING = 18;
         final int SLOT_Y_SPACING = 18;
-        final int HOTBAR_XPOS = 8;
-        final int HOTBAR_YPOS = 142;
+        final int CRAFTING_SLOTS_XPOS = 30;
+        final int CRAFTING_SLOTS_YPOS = 17;
 
-        // add player hotbar to gui
-        for (int i = 0; i < HOTBAR_SLOT_COUNT; i++) {
-            addSlotToContainer(new Slot(invPlayer, i, HOTBAR_XPOS + SLOT_X_SPACING * i, HOTBAR_YPOS));
+        // add crafting slots
+        for (int i = 0; i < CRAFTING_SLOTS_ROW_COUNT; i++) {
+            for (int j = 0; j < CRAFTING_SLOTS_COLUMN_COUNT; j++) {
+                int slotNumber = VANILLA_SLOT_COUNT + i * CRAFTING_SLOTS_COLUMN_COUNT + j;
+                int xpos = CRAFTING_SLOTS_XPOS + j * SLOT_X_SPACING;
+                int ypos = CRAFTING_SLOTS_YPOS + i * SLOT_Y_SPACING;
+                addSlotToContainer(new SlotCrafting(entity, slotNumber, xpos, ypos));
+            }
         }
 
         final int PLAYER_INVENTORY_XPOS = 8;
@@ -58,18 +63,12 @@ public class ContainerSignCraft extends Container {
             }
         }
 
-        final int CRAFTING_SLOTS_XPOS = 30;
-        final int CRAFTING_SLOTS_YPOS = 17;
+        final int HOTBAR_XPOS = 8;
+        final int HOTBAR_YPOS = 142;
 
-        // add crafting slots
-        for (int i = 0; i < CRAFTING_SLOTS_ROW_COUNT; i++) {
-            for (int j = 0; j < CRAFTING_SLOTS_COLUMN_COUNT; j++) {
-                //int slotNumber = j + FIRST_CRAFTING_SLOT_NUMBER;
-                int slotNumber = VANILLA_SLOT_COUNT + i * CRAFTING_SLOTS_COLUMN_COUNT + j;
-                int xpos = CRAFTING_SLOTS_XPOS + j * SLOT_X_SPACING;
-                int ypos = CRAFTING_SLOTS_YPOS + i * SLOT_Y_SPACING;
-                addSlotToContainer(new Slot(invPlayer, slotNumber, xpos, ypos));
-            }
+        // add player hotbar to gui
+        for (int i = 0; i < HOTBAR_SLOT_COUNT; i++) {
+            addSlotToContainer(new Slot(invPlayer, i, HOTBAR_XPOS + SLOT_X_SPACING * i, HOTBAR_YPOS));
         }
 
         final int OUTPUT_SLOTS_XPOS = 124;
@@ -140,7 +139,7 @@ public class ContainerSignCraft extends Container {
             allFieldsHaveChanged = true;
         }
 
-        for (int i = 0; i < cachedFields.length; ++i) {
+        for (int i = 0; i < cachedFields.length; i++) {
             if (allFieldsHaveChanged || cachedFields[i] != entity.getField(i)) {
                 cachedFields[i] = entity.getField(i);
                 fieldHasChanged[i] = true;

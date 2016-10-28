@@ -31,8 +31,10 @@ public class GuiHandler implements IGuiHandler {
 
         if (entity instanceof TileEntitySignPress) {
             TileEntitySignPress tileEntitySignPress = (TileEntitySignPress) entity;
+
             return new ContainerSignCraft(player.inventory, tileEntitySignPress);
         }
+
         return null;
     }
 
@@ -45,8 +47,10 @@ public class GuiHandler implements IGuiHandler {
         TileEntity entity = world.getTileEntity(new BlockPos(x, y, z));
         if (entity instanceof TileEntitySignPress) {
             TileEntitySignPress tileEntitySignPress = (TileEntitySignPress) entity;
+
             return new GuiSignPress(player.inventory, tileEntitySignPress);
         }
+
         return null;
     }
 }

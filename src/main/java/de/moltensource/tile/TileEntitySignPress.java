@@ -141,7 +141,7 @@ public class TileEntitySignPress extends TileEntity implements IInventory {
         super.writeToNBT(parentNBTTagCompound);
 
         NBTTagList dataForAllSlots = new NBTTagList();
-        for (int i = 0; i < this.itemStacks.length; ++i) {
+        for (int i = 0; i < this.itemStacks.length; i++) {
             if (this.itemStacks[i] != null) {
                 NBTTagCompound dataForThisSlot = new NBTTagCompound();
 
@@ -164,7 +164,7 @@ public class TileEntitySignPress extends TileEntity implements IInventory {
         NBTTagList dataForAllSlots = nbtTagCompound.getTagList("Items", NBT_TYPE_COMPOUND);
 
         Arrays.fill(itemStacks, null);
-        for (int i = 0; i < dataForAllSlots.tagCount(); ++i) {
+        for (int i = 0; i < dataForAllSlots.tagCount(); i++) {
             NBTTagCompound dataForOneSlot = dataForAllSlots.getCompoundTagAt(i);
             byte slotNumber = dataForOneSlot.getByte("Slot");
             if (slotNumber >= 0 && slotNumber < this.itemStacks.length) {

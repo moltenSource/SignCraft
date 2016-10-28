@@ -10,10 +10,10 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class ContainerSignCraft extends Container {
-    public static final int OUTPUT_SLOTS_COUNT = 1;
+    private static final int OUTPUT_SLOTS_COUNT = 1;
     private static final int CRAFTING_SLOTS_ROW_COUNT = 3;
     private static final int CRAFTING_SLOTS_COLUMN_COUNT = 3;
-    public static final int CRAFTING_SLOTS_COUNT = CRAFTING_SLOTS_ROW_COUNT * CRAFTING_SLOTS_COLUMN_COUNT;
+    private static final int CRAFTING_SLOTS_COUNT = CRAFTING_SLOTS_ROW_COUNT * CRAFTING_SLOTS_COLUMN_COUNT;
 
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -89,12 +89,13 @@ public class ContainerSignCraft extends Container {
     // this defines shift-clicking action
     @Override
     public ItemStack transferStackInSlot(EntityPlayer player, int sourceSlotIndex) {
-        Slot sourceSlot = (Slot) inventorySlots.get(sourceSlotIndex);
-
+        Slot sourceSlot = inventorySlots.get(sourceSlotIndex);
         ItemStack copyOfSourceStack = null;
-        if (sourceSlot != null && sourceSlot.getHasStack()) {
 
+        if (sourceSlot != null && sourceSlot.getHasStack()) {
             ItemStack sourceStack = sourceSlot.getStack();
+
+            assert sourceStack != null;
             copyOfSourceStack = sourceStack.copy();
 
             // check if the slot clicked is a vanilla container slots
@@ -116,13 +117,13 @@ public class ContainerSignCraft extends Container {
 
             // if stack size == 0 set slot content to null
             if (sourceStack.stackSize == 0) {
-                sourceSlot.putStack((ItemStack) null);
+                sourceSlot.putStack(null);
             } else {
                 sourceSlot.onSlotChanged();
             }
-
             sourceSlot.onPickupFromSlot(player, sourceStack);
         }
+
         return copyOfSourceStack;
     }
 

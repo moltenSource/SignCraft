@@ -14,4 +14,7 @@ For IntelliJ IDEA:
 3. After the project is imported run `gradlew genIntellijRuns`
 
 ## Credits
-* [Origin of Signs](https://de.wikipedgit ia.org/wiki/Warnzeichen)
+* [Origin of Signs](https://de.wikipedia.org/wiki/Warnzeichen)
+
+## Licence
+[![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](http://opensource.org/licenses/MIT)

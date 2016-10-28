@@ -14,7 +14,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = SignCraft.MODID, name = SignCraft.MODID, version = SignCraft.VERSION)
 public class SignCraft {
-
     public static final String MODID = "SignCraft";
     public static final String VERSION = "@VERSION@";
 

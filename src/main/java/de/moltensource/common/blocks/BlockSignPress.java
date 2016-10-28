@@ -44,6 +44,7 @@ public class BlockSignPress extends BlockContainer {
     @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
         TileEntity tileEntity = worldIn.getTileEntity(pos);
+
         if (tileEntity instanceof IInventory) {
             InventoryHelper.dropInventoryItems(worldIn, pos, (IInventory) tileEntity);
         }

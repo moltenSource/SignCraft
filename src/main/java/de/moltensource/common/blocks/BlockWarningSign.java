@@ -18,7 +18,6 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BlockWarningSign extends Block {
-
     public static final AxisAlignedBB BLOCK_BOX_NORTH = new AxisAlignedBB(0, 0, 0, 1, 1, 0.0625);
     public static final AxisAlignedBB BLOCK_BOX_SOUTH = new AxisAlignedBB(1, 0, 1, 0, 1, 15 * 0.0625);
     public static final AxisAlignedBB BLOCK_BOX_EAST = new AxisAlignedBB(1, 0, 0, 15 * 0.0625, 1, 1);
@@ -72,7 +71,6 @@ public class BlockWarningSign extends Block {
     @Override
     public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn) {
         EnumFacing facing = state.getValue(FACING);
-
         AxisAlignedBB box;
 
         switch (facing.getName()) {
@@ -113,7 +111,7 @@ public class BlockWarningSign extends Block {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((EnumFacing) state.getValue(FACING)).getIndex();
+        return state.getValue(FACING).getIndex();
     }
 
     @Override
@@ -122,9 +120,7 @@ public class BlockWarningSign extends Block {
     }
 
     @Override
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos,
-                                     EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
-                                     EntityLivingBase placer) {
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
         return getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 }

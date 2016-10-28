@@ -20,8 +20,8 @@ public class ProxyClient extends ProxyCommon {
     @Override
     public Block registerBlock(String name, Supplier<Block> constructor) {
         Block block = super.registerBlock(name, constructor);
-
         Item item = Item.getItemFromBlock(block);
+
         if (item != null)
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(SignCraft.MODID + ":" + name, "inventory"));
 

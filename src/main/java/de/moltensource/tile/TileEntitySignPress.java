@@ -55,8 +55,8 @@ public class TileEntitySignPress extends TileEntity implements IInventory {
                 setInventorySlotContents(index, null);
             }
         }
-
         markDirty();
+
         return stackRemoved;
     }
 
@@ -64,6 +64,7 @@ public class TileEntitySignPress extends TileEntity implements IInventory {
     @Override
     public ItemStack removeStackFromSlot(int index) {
         ItemStack stack = getStackInSlot(index);
+
         if (stack != null) setInventorySlotContents(index, null);
 
         return stack;
@@ -72,6 +73,7 @@ public class TileEntitySignPress extends TileEntity implements IInventory {
     @Override
     public void setInventorySlotContents(int index, @Nullable ItemStack stack) {
         itemStacks[index] = stack;
+
         if (stack != null && stack.stackSize > getInventoryStackLimit()) {
             stack.stackSize = getInventoryStackLimit();
         }

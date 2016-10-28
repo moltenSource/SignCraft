@@ -4,6 +4,7 @@ import de.moltensource.SignCraft;
 import de.moltensource.common.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -32,7 +33,7 @@ public class ProxyCommon {
         return block;
     }
 
-    public void registerTileEntity(Class c, String name) {
+    public void registerTileEntity(Class<TileEntity> c, String name) {
         GameRegistry.registerTileEntity(c, name);
     }
 

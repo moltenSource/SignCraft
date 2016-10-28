@@ -7,7 +7,6 @@ import de.moltensource.tile.TileEntitySignPress;
 import net.minecraft.block.Block;
 
 public class ModBlocks {
-
     public static Block generalWarningSign;
     public static Block explosiveSubstancesSign;
     public static Block bioHazardSign;

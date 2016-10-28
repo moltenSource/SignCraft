@@ -23,7 +23,6 @@ public class GuiSignPress extends GuiContainer {
 
         xSize = 176;
         ySize = 166;
-
         this.entity = entity;
     }
 
@@ -41,6 +40,7 @@ public class GuiSignPress extends GuiContainer {
         final int LABEL_XPOS = 5;
         final int LABEL_YPOS = 5;
 
+        assert entity.getDisplayName() != null;
         fontRendererObj.drawString(entity.getDisplayName().getUnformattedText(), LABEL_XPOS, LABEL_YPOS, Color.darkGray.getRGB());
     }
 }

@@ -11,8 +11,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.awt.*;
-
 @SideOnly(Side.CLIENT)
 public class GuiSignPress extends GuiContainer {
     public static final ResourceLocation texture = new ResourceLocation(SignCraft.MODID.toLowerCase(), "textures/gui/blockSignPress.png");
@@ -37,10 +35,5 @@ public class GuiSignPress extends GuiContainer {
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 
-        final int LABEL_XPOS = 5;
-        final int LABEL_YPOS = 5;
-
-        assert entity.getDisplayName() != null;
-        fontRendererObj.drawString(entity.getDisplayName().getUnformattedText(), LABEL_XPOS, LABEL_YPOS, Color.darkGray.getRGB());
     }
 }

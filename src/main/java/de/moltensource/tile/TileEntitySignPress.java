@@ -19,12 +19,8 @@ import java.util.Arrays;
 public class TileEntitySignPress extends TileEntity implements IInventory {
     private ItemStack[] itemStacks = new ItemStack[ContainerSignCraft.SIGNPRESS_SLOTS_COUNT];
 
-    static public boolean isValidCraftingItem(ItemStack itemStack) {
+    static public boolean isValidMachineStorageItem(ItemStack itemStack) {
         return true;
-    }
-
-    static public boolean isValidOutputItem(ItemStack itemStack) {
-        return false;
     }
 
     @Override

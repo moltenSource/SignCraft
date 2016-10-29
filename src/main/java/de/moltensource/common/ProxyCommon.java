@@ -2,10 +2,8 @@ package de.moltensource.common;
 
 import de.moltensource.SignCraft;
 import de.moltensource.common.init.ModBlocks;
-import de.moltensource.tile.TileEntitySignPress;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;

@@ -10,24 +10,18 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class ContainerSignCraft extends Container {
-    private static final int OUTPUT_SLOTS_COUNT = 1;
-    private static final int CRAFTING_SLOTS_ROW_COUNT = 3;
-    private static final int CRAFTING_SLOTS_COLUMN_COUNT = 3;
-    private static final int CRAFTING_SLOTS_COUNT = CRAFTING_SLOTS_ROW_COUNT * CRAFTING_SLOTS_COLUMN_COUNT;
+    private static final int MACHINE_STORAGE_SLOTS_COUNT = 2;
 
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
-    public static final int SIGNPRESS_SLOTS_COUNT = CRAFTING_SLOTS_COUNT + OUTPUT_SLOTS_COUNT + VANILLA_SLOT_COUNT;
+    public static final int SIGNPRESS_SLOTS_COUNT = MACHINE_STORAGE_SLOTS_COUNT + VANILLA_SLOT_COUNT;
 
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
-    private static final int FIRST_CRAFTING_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int FIRST_OUTPUT_SLOT_INDEX = FIRST_CRAFTING_SLOT_INDEX + CRAFTING_SLOTS_COUNT;
-
-    private static final int FIRST_CRAFTING_SLOT_NUMBER = VANILLA_SLOT_COUNT;
-    private static final int FIRST_OUTPUT_SLOT_NUMBER = FIRST_CRAFTING_SLOT_NUMBER + CRAFTING_SLOTS_COUNT;
+    private static final int FIRST_MACHINE_STORAGE_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
+    private static final int FIRST_OUTPUT_SLOT_INDEX = FIRST_MACHINE_STORAGE_SLOT_INDEX + MACHINE_STORAGE_SLOTS_COUNT;
 
     private TileEntitySignPress entity;
     private int[] cachedFields;
@@ -37,17 +31,12 @@ public class ContainerSignCraft extends Container {
 
         final int SLOT_X_SPACING = 18;
         final int SLOT_Y_SPACING = 18;
-        final int CRAFTING_SLOTS_XPOS = 30;
-        final int CRAFTING_SLOTS_YPOS = 17;
+        final int MACHINE_STORAGE_SLOTS_XPOS = 8;
+        final int MACHINE_STORAGE_SLOTS_YPOS = 61;
 
-        // add crafting slots
-        for (int i = 0; i < CRAFTING_SLOTS_ROW_COUNT; i++) {
-            for (int j = 0; j < CRAFTING_SLOTS_COLUMN_COUNT; j++) {
-                int slotNumber = VANILLA_SLOT_COUNT + i * CRAFTING_SLOTS_COLUMN_COUNT + j;
-                int xpos = CRAFTING_SLOTS_XPOS + j * SLOT_X_SPACING;
-                int ypos = CRAFTING_SLOTS_YPOS + i * SLOT_Y_SPACING;
-                addSlotToContainer(new SlotCrafting(entity, slotNumber, xpos, ypos));
-            }
+        // add machine storage slots
+        for (int i = 0; i < MACHINE_STORAGE_SLOTS_COUNT; i++) {
+            addSlotToContainer(new SlotMachineStorage(entity, VANILLA_SLOT_COUNT + i, MACHINE_STORAGE_SLOTS_XPOS + i * SLOT_X_SPACING, MACHINE_STORAGE_SLOTS_YPOS));
         }
 
         final int PLAYER_INVENTORY_XPOS = 8;
@@ -69,15 +58,6 @@ public class ContainerSignCraft extends Container {
         // add player hotbar to gui
         for (int i = 0; i < HOTBAR_SLOT_COUNT; i++) {
             addSlotToContainer(new Slot(invPlayer, i, HOTBAR_XPOS + SLOT_X_SPACING * i, HOTBAR_YPOS));
-        }
-
-        final int OUTPUT_SLOTS_XPOS = 124;
-        final int OUTPUT_SLOTS_YPOS = 35;
-
-        // add output slots
-        for (int i = 0; i < OUTPUT_SLOTS_COUNT; i++) {
-            int slotNumber = i + FIRST_OUTPUT_SLOT_NUMBER;
-            addSlotToContainer(new SlotOutput(entity, slotNumber, OUTPUT_SLOTS_XPOS, OUTPUT_SLOTS_YPOS + SLOT_Y_SPACING * i));
         }
     }
 
@@ -101,7 +81,7 @@ public class ContainerSignCraft extends Container {
             // check if the slot clicked is a vanilla container slots
             if (sourceSlotIndex >= VANILLA_FIRST_SLOT_INDEX && sourceSlotIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
                 // merge clicked stack into the furnace slots
-                if (!mergeItemStack(sourceStack, FIRST_CRAFTING_SLOT_INDEX, FIRST_CRAFTING_SLOT_INDEX + CRAFTING_SLOTS_COUNT, false)) {
+                if (!mergeItemStack(sourceStack, FIRST_MACHINE_STORAGE_SLOT_INDEX, FIRST_MACHINE_STORAGE_SLOT_INDEX + MACHINE_STORAGE_SLOTS_COUNT, false)) {
                     return null;
                 }
             } else if (sourceSlotIndex == FIRST_OUTPUT_SLOT_INDEX) {
@@ -157,27 +137,15 @@ public class ContainerSignCraft extends Container {
         }
     }
 
-    // crafting slot
-    public class SlotCrafting extends Slot {
-        public SlotCrafting(IInventory inventoryIn, int index, int xPosition, int yPosition) {
+    // machine storage slot
+    public class SlotMachineStorage extends Slot {
+        public SlotMachineStorage(IInventory inventoryIn, int index, int xPosition, int yPosition) {
             super(inventoryIn, index, xPosition, yPosition);
         }
 
         @Override
         public boolean isItemValid(ItemStack stack) {
-            return TileEntitySignPress.isValidCraftingItem(stack);
-        }
-    }
-
-    // output slot
-    public class SlotOutput extends Slot {
-        public SlotOutput(IInventory inventoryIn, int index, int xPosition, int yPosition) {
-            super(inventoryIn, index, xPosition, yPosition);
-        }
-
-        @Override
-        public boolean isItemValid(ItemStack stack) {
-            return TileEntitySignPress.isValidOutputItem(stack);
+            return TileEntitySignPress.isValidMachineStorageItem(stack);
         }
     }
 }
